@@ -1,12 +1,5 @@
 function loadWebAssembly(filename, imports = {}) {
-  return /*dictionary WebAssemblyInstantiatedSource {
-   required WebAssembly.Module module;
-   required WebAssembly.Instance instance;
-};
-
-Promise<WebAssemblyInstantiatedSource>
-  instantiate(BufferSource bytes [, importObject])*/
-  fetch(filename)
+  return fetch(filename)
     .then(response => response.arrayBuffer())
     .then(buffer => WebAssembly.compile(buffer))
     .then(module => {
