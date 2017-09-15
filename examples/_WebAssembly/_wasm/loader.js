@@ -1,5 +1,12 @@
 function loadWebAssembly(filename, imports = {}) {
-  return fetch(filename)
+  return dictionary WebAssemblyInstantiatedSource {
+   required WebAssembly.Module module;
+   required WebAssembly.Instance instance;
+};
+
+Promise<WebAssemblyInstantiatedSource>
+  instantiate(BufferSource bytes [, importObject])
+  /*fetch(filename)
     .then(response => response.arrayBuffer())
     .then(buffer => WebAssembly.compile(buffer))
     .then(module => {
@@ -11,7 +18,8 @@ function loadWebAssembly(filename, imports = {}) {
         table: new WebAssembly.Table({ initial: 0, maximum: 0, element: 'anyfunc' })
       })
       return new WebAssembly.Instance(module, imports)
-    })
+    })*/
+  
 }
 
 function loadJS (url, imports = {}) {
