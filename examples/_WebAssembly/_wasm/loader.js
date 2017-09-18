@@ -11,7 +11,7 @@ function loadWebAssembly(filename, imports = {}) {
         table: new WebAssembly.Table({ initial: 0, maximum: 0, element: 'anyfunc' })
       })
     Promise<WebAssemblyInstantiatedSource>
-      return new WebAssembly.instantiate(BufferSource module [, instance])//WebAssembly.Instance(module, imports)
+      return new instantiate(BufferSource module [, instance])//WebAssembly.Instance(module, imports)
     })
   
 }
