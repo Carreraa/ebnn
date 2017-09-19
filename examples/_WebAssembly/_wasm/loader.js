@@ -10,8 +10,8 @@ function loadWebAssembly(filename, imports = {}) {
         memory: new WebAssembly.Memory({ initial: 256, maximum: 256 }),
         table: new WebAssembly.Table({ initial: 0, maximum: 0, element: 'anyfunc' })
       })
-    Promise<WebAssemblyInstantiatedSource>
-      return new instantiate(BufferSource bytes [, importObject])//WebAssembly.Instance(module, imports)
+    //Promise<WebAssemblyInstantiatedSource>
+      return new WebAssembly.Instance(module, imports)//instantiate(BufferSource bytes [, importObject])
     })
   
 }
