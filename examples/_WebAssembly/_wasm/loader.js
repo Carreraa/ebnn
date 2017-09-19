@@ -1,3 +1,10 @@
+var importObject = {
+  imports: {
+    imported_func: function(arg) {
+      console.log(arg);
+    }
+  }
+};
 function loadWebAssembly(filename, imports = {}) {
   return fetch(filename)
     .then(response => response.arrayBuffer())
