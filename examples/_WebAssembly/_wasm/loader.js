@@ -8,7 +8,7 @@ var importObject = {
 function loadWebAssembly(filename, imports = {}) {
   return fetch(filename)
     .then(response => response.arrayBuffer())
-    .then(bytes => WebAssembly.instantiate(bytes, importObject))
+    .then(bytes => WebAssembly.instantiate(module, importObject))
 //    .then(buffer => WebAssembly.compile(buffer))
     .then(module => {
       imports.env = imports.env || {}
